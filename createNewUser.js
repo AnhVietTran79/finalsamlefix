@@ -5,7 +5,7 @@ const User = require('./models/userModel'); // Make sure this path is correct
 const dbURL = 'mongodb+srv://tranvietanh2k3:final123@finaltest.ufz3b.mongodb.net/?retryWrites=true&w=majority&appName=finaltest'; // Replace with your actual MongoDB URL
 
 // Connect to MongoDB
-mongoose.connect(dbURL, { dbName: 'test' })
+mongoose.connect(dbURL, { dbName: 'finaltest' })
   .then(() => {
     console.log('Connected to MongoDB');
     createNewUser(); // Call the function to create a new user

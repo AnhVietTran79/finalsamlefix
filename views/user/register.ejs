@@ -1,0 +1,70 @@
+<%- include('../partial/header', { title: 'Login' }) %> 
+
+
+<body class="login-page">
+    
+    <!--Register Form-->
+    <div class="form-container">
+        <div class="form-col">
+            <div class="btn-box" role="tablist">
+                <button role="button" class="btn btn-3" id="login" role="tab"><a href="/login" class="login-a">Log In</a></button>
+                <button role="button" class="btn btn-1" id="register" role="tab">Register</button>
+            </div>
+
+            <!--Register Form container-->
+            <form action="/register" method="post" enctype="multipart/form-data" role="form" class="form-box register-form">
+                <div class="re-form-title">
+                    <span>Register</span>
+                </div>
+
+                <div class="form-inputs">
+                    <div class="input-box">
+                        <input type="text" name="name" class="inputs input-field" placeholder="Username" required>
+                        <ion-icon name="person" class="icon"></ion-icon>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="email" name="email" class="inputs input-field" placeholder="Email" required>
+                        <ion-icon name="mail" class="icon"></ion-icon>
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" name="password" class="inputs input-field" oninput="changeIcon(this.value)" id="regPassword" placeholder="Password" required
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}">
+                        <ion-icon name="eye-off" class="icon" id="reg-pass-icon" onclick="myRegPassword()"></ion-icon>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="input-box">
+                        <div class="upload-btn-wrapper">
+                            <button role="button" class="btnUpload">Upload a file</button>
+                            <input type="file" name="image" />
+                        </div>
+                    </div>
+                    <br><br>
+                    <% 
+                        if(typeof message !== 'undefined'){
+                                %>
+                                <p class="email-confirm" style="color: green; font-size: 20px;"><%= message %></p>
+                                <%
+                        } 
+                    %>
+
+                    <div class="input-box">
+                        <button role="button" value="Login" class="inputs submit-btn">
+                            <span>Register</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="/js/darkmode.js" defer></script>
+    <script src="/js/script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    
+</body>
+</html>

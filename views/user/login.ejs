@@ -1,7 +1,10 @@
 <%- include('../partial/header', { title: 'Login' }) %> 
 
 <div class="container mt-4">
-  <h2 class="text-center">Login</h2>
+  <div class="btn-box">
+    <button class="btn btn-1" id="login">Log In</button>
+    <button class="btn btn-2" id="register"><a class="register-a" href="/register">Register</a></button>
+</div>
   <% if (typeof error !== 'undefined') { %>
     <div class="alert alert-danger">
       <%= error %>
